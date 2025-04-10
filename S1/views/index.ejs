@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Liste des utilisateurs</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    select, button { margin-top: 10px; padding: 5px 10px; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 8px; }
+    .user-details { margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Utilisateurs</h2>
+
+    <% users.forEach(user => { %>
+      <li><%= user.id %>     <%= user.name %> (âge : <%= user.age %>)</li>
+    <% }); %>
+  
+
+  <form method="GET" action="/user">
+    <label for="userId">Entrez l'ID de l'utilisateur :</label>
+    <input type="text" name="id" id="userId" placeholder="Entrez l'ID ici">
+    <button type="submit">Rechercher</button>
+  </form>
+
+  <% if (selectedUser) { %>
+    <h3>
+      <strong>URL du profil utilisateur : </strong>
+      <a href="/user?id=<%= selectedUser.id %>">/user?id=<%= selectedUser.id %></a>
+    </h3>
+
+    <div class="user-details">
+      <h3>Détails de l'utilisateur sélectionné (en JSON) :</h3>
+      <pre><%= JSON.stringify(selectedUser, null, 2) %></pre> <!-- JSON formatted output -->
+    </div>
+  <% } %>
+</body>
+</html>

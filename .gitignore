@@ -1,0 +1,53 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by testing tools
+coverage/
+
+# Next.js build output (si jamais tu utilises Next)
+.next/
+
+# Parcel build cache
+.cache/
+
+# dotenv environment variables
+.env
+.env.*.local
+
+# VS Code settings
+.vscode/
+.history/
+
+# Mac system files
+.DS_Store
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# React Native
+.expo/
+
+# Storybook
+.storybook-out/
+
+# Others
+*.tgz
